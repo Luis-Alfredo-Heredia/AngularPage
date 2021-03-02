@@ -1,0 +1,48 @@
+<div class="container">
+  <h4 class="display-4">Los ciclos tecnológicos son</h4>
+  <div class="row" >
+    <div class="col">
+      <!-- *ngFor="let item of ciclos -->
+      <div class="jumbotron">
+        <p class="lead">DAM</p>
+        <!-- {{ item.nombre }} -->
+        <hr class="my-4" />
+        <p>Asignaturas:</p>
+        <table class="table table-bordered">
+          <tbody>
+            <tr *ngFor="let itemAsi of dam">
+              <td>{{ itemAsi.nombre }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <!-- *ngFor="let item of ciclos -->
+      <div class="jumbotron">
+        <p class="lead">DAW</p>
+        <!-- {{ item.nombre }} -->
+        <hr class="my-4" />
+        <p>Asignaturas:</p>
+        <table class="table table-bordered">
+          <tbody>
+            <tr *ngFor="let itemAsii of daw">
+              <td>{{ itemAsii.nombre }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 " *ngFor="let item of ciclos">
+      <div class="card" style="width: 15rem">
+        <img [src]="item.imagen" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{item.curso+" "+item.nombre}}</h5>
+          <a class="btn btn-primary" (click)="irCiclo(item.curso,item.nombre,item.imagen)">Ver Detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

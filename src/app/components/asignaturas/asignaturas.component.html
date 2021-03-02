@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row m-4">
+    <div class="col-4">
+      <p>Filtrar por nombre:</p>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Introduce el nombre de la asignatura"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        #nombreN
+        [(ngModel)]="pipe"
+        name="pipe"
+      />
+    </div>
+    <div class="col-4">
+      <p>Filtrar por ciclo:</p>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Selecciona un ciclo"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        #nombreCi
+        [(ngModel)]="pipe2"
+        name="pipe2"
+      />
+    </div>
+    <div class="col-4">
+      <p>Filtrar por conocimiento:</p>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="selecciona un conocimiento"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        #nombreCon
+        [(ngModel)]="pipe3"
+        name="pipe3"
+      />
+    </div>
+    <br />
+
+    <button
+      type="button"
+      class="btn btn-primary m-4"
+      (click)="botonFiltrar(nombreN)"
+    >
+      Filtrar
+    </button>
+
+    <h2 class="">Los resultados de búsqueda son:</h2>
+    <div class="alert alert-primary m-3" role="alert">
+      El número de asignaturas que cumplen el filtro es de:
+    </div>
+  </div>
+
+  <div class="row m-4">
+    <div
+      class="col-3"
+      *ngFor="
+        let item of asignaturas | repetido: pipe | filtrociclos: pipe2"
+    >
+      <app-asignatura [pasar]="item"></app-asignatura>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- <p>detalleciclo works!{{curso}} {{nombre}}</p>
+ -->
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <br />
+      <img [src]="imagen" class="card-img-top" alt="..." />
+      <h5 class="card-title">{{ curso }} {{ nombre }}</h5><br>
+
+      <ul *ngFor="let items of nuevoArrayUno">
+        <li>{{items.nombre}}</li>
+      </ul>
+    </div>
+
+    <div class="col-9">
+      <div class="row m-4">
+        <div class="col" *ngFor="let item of nuevoArrayUno">
+          <app-asignatura [pasar]="item"></app-asignatura>
+          <!-- <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{item.nombre}}</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+          <br /><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
